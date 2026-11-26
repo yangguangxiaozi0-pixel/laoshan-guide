@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#143b37">
+  <meta name="description" content="崂山景区中英双语游览问答，查询常规开放时间、公共交通换乘与游客服务。">
+  <title>崂山游览问答 · Laoshan Visitor Guide</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="knowledge.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="top">
+    <div class="top-inner">
+      <div class="brand">
+        <span class="mark" aria-hidden="true">崂</span>
+        <div><span data-copy="brand">崂山游览问答</span><small data-copy="subBrand">LAOSHAN VISITOR GUIDE</small></div>
+      </div>
+      <nav class="language" aria-label="Language / 语言">
+        <button type="button" data-language="zh" aria-pressed="true" lang="zh-CN">中文</button>
+        <button type="button" data-language="en" aria-pressed="false" lang="en">EN</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="landscape" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="hero-copy">
+        <p class="location" data-copy="location">青岛 · 崂山风景区</p>
+        <h1 id="hero-title" data-copy="headline">出发前，问一问。</h1>
+        <p data-copy="intro">查常规开放时间、交通换乘和游客服务。<br>支持中文与 English 提问。</p>
+      </div>
+    </section>
+
+    <section class="ask" aria-labelledby="question-label">
+      <form id="question-form">
+        <label for="question" id="question-label" data-copy="ask">你想了解什么？</label>
+        <div class="input-row">
+          <input id="question" name="q" type="search" maxlength="240" required autocomplete="off" placeholder="例如：去巨峰在哪一站换乘？">
+          <button type="submit" class="submit" data-copy="submit">查询</button>
+        </div>
+      </form>
+      <div class="chips" id="chips" role="group" aria-label="示例问题"></div>
+      <noscript>请启用 JavaScript 使用问答。Please enable JavaScript to use the guide.</noscript>
+    </section>
+
+    <section class="results" id="results" aria-labelledby="answer-label" hidden>
+      <div class="result-head">
+        <h2 id="answer-label" data-copy="answer">查询结果</h2>
+        <p id="asked"></p>
+      </div>
+      <div id="answer-list" aria-live="polite" aria-atomic="true"></div>
+    </section>
+
+    <aside class="official" aria-labelledby="official-label">
+      <div>
+        <h2 id="official-label" data-copy="official">景区官方渠道</h2>
+        <p data-copy="officialNote">临时开闭园及当天运营情况，请在出发前核实。</p>
+      </div>
+      <div id="official-links" class="channel-links"></div>
+    </aside>
+    <footer>
+      <span data-copy="about">项目演示 · 依据景区公开官方资料整理</span>
+      <span id="reviewed"></span>
+    </footer>
+  </main>
+</body>
+</html>
